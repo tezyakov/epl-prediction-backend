@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 from flask import Flask, request
+from flask_cors import CORS
 from keras.models import load_model
 import pandas as pd
 import numpy as np
@@ -266,3 +267,4 @@ def predict_result():
 
 model = load_model('model.h5')
 app.run()
+CORS(app)
