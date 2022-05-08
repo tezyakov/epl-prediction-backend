@@ -3,7 +3,7 @@ name: HerokuDeploy
 on:
   push:
     branches:
-      - main
+      - master
  
 jobs:        
   build:
@@ -14,7 +14,7 @@ jobs:
     - name: Build and deploy the Docker image for server
       env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          APP_NAME: ${{ 'socket-chat-arch' }}
+          APP_NAME: ${{ 'epl-prediction-backend' }}
       run: |
         docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
         heroku container:push web -a $APP_NAME
