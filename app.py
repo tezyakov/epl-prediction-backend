@@ -264,6 +264,5 @@ def predict_result():
 
     return { "prediction": pd.Series(classes_x).to_json(orient='values'), "probabilities": pd.Series(predict[0]).to_json(orient='values') }
 
-if __name__ == '__main__':
-    model = load_model('./model.h5')
-    app.run()
+model = load_model('model.h5')
+app.run()
