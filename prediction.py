@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 from flask import Flask, request
 from keras.models import load_model
